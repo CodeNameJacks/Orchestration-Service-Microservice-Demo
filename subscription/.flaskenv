@@ -1,0 +1,3 @@
+FLASK_APP=subscription_api.py
+FLASK_DEBUG=1
+FLASK_RUN_PORT=5002
