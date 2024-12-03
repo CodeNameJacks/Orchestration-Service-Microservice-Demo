@@ -33,12 +33,14 @@ class OrchestrateService:
     # function that makes url call to get user info
     # @params id (user id)
     def get_userInfo(id):
-        response = requests.get(f"{USER_SERV_URL}/user/{id}")
-        if(response.status_code != 200):
-            raise Exception ("User {id} does not exits. Please try a different user id") 
-        else: 
-            return response.json()
-        
+        try:
+            response = requests.get(f"{USER_SERV_URL}/user/{id}")
+            if(response.status_code != 200):
+                return '0'
+            else: 
+                return response.json()
+        except:
+            print("User does not exist")
         
     # function that makes url call to get user subscription info
     # @params id (user id)
@@ -72,31 +74,35 @@ class OrchestrateService:
     # @params id (user_id)
     @app.route('/user/subscription/<id>', methods = ['GET'])    
     def subscription(id):
-        
         user_data = OrchestrateService.get_userInfo(id)
-        sub_data = OrchestrateService.get_userSubInfo(id)
-        
-        results = { "USER INFO" : user_data[0],
-                   "SUBSCRIPTION INFO" : sub_data
-                  }
-          
-        return str(results)
+        if(user_data == '0'):
+            return ("The user with user id {id} does not exist. Please enter a different user.")
+        else:
+            sub_data = OrchestrateService.get_userSubInfo(id)
+            #structure response
+            results = { "USER INFO" : user_data[0],
+                    "SUBSCRIPTION INFO" : sub_data
+                    }
+            return str(results)
     
     
-    #Retrieves user dettails, subscription status and prefernce by product. 
+    #Retrieves user details, subscription status and preference by product. 
     # @params id (user_id)
     @app.route('/user/details/<id>', methods = ['GET']) 
     def details(id):
         user_data = OrchestrateService.get_userInfo(id)
-        sub_data = OrchestrateService.get_userSubInfo(id)
-        pref_data = OrchestrateService.get_userPrefInfo(id)
-        
-        results = { "USER INFO" : user_data[0],
-                   "SUBSCRIPTION INFO" : sub_data[0]['status'],
-                   "PREFERENCES INFO" : pref_data
-                  }
-          
-        return str(results)
+        if(user_data == '0'):
+            return ("The user with user id {id} does not exist. Please enter a different user")
+        else:
+            sub_data = OrchestrateService.get_userSubInfo(id)
+            pref_data = OrchestrateService.get_userPrefInfo(id)   
+            #structure response     
+            results = { "USER INFO" : user_data[0],
+                    "SUBSCRIPTION INFO" : sub_data[0]['status'],
+                    "PREFERENCES INFO" : pref_data
+                    }
+            return str(results)
+    
     
     if __name__ == '__main__':
         app.run(port=5006)
