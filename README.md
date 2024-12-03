@@ -18,4 +18,4 @@ Perform steps 2 - 6 in each folder.
 
 You can test each server to ensure it is running by opening a web browser and entering `localhost:<port number>/api/test` in the url. You should get the following response `<Name of service> service is working and backend is running` for the respective service.
 
-System documentation is contianed in the `Documentation.md` file.
+System documentation is contianed in the `Documentation.pdf` file.
