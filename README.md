@@ -12,9 +12,9 @@ Perform steps 2 - 6 in each folder.
 4. To activate the virtual environment run `. venv/bin/activate` Now that virtual Python environment is running, install the following:
 5. Run the `requirements.txt` file to install the dependencies. Should the dependencies fail to laod you can enter them manually be entering `pip install flask python-dotenv requests` in the command line.
 6. Also install the mySQL connector by running `pip install mysql-connector-python` in the command line.
-7. You need to create a file called .flaskenv in each folder. Place this in the root directory. In that file, place the following on their own line: `FLASK_APP=<name of the api.py for each folder>`,  `FLASK_DEBUG=1`.`FLASK_RUN_PORT=<port number for the service>`.
+7. You need to create a file called .flaskenv in each folder. Place this in the root directory. In that file, place the following on their own line: `FLASK_APP=<name of the api.py for each folder>`,  `FLASK_DEBUG=1`, and `FLASK_RUN_PORT=<port number for the service>`.
 8. In the root directory create a file called `.env`. Place your non-Flask environment variables in this file.
-9. In the terminal command line `cd` to each folder one by one and run the command `flask run`. Your servers should now be running on their respectve ports.
+9. In the terminal command line `cd` to each folder one by one and run the command `flask run`. Your servers should now be running on their respective ports.
 
 You can test each server to ensure it is running by opening a web browser and entering `localhost:<port number>/api/test` in the url. You should get the following response `<Name of service> service is working and backend is running` for the respective service.
 
