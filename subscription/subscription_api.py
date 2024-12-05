@@ -32,7 +32,7 @@ class Subscription:
             )
             
             cursor = mydb.cursor()
-            sqltext = 'SELECT accountFreq as accountType, dateRenew as renewalDate, dateRegistered as registratinDate, product, status, paymentType as paymentMethod from subscription.subscription where id ='
+            sqltext = 'SELECT accountFreq as accountType, dateRenew as renewalDate, dateRegistered as registratinDate, product, status, paymentType as paymentMethod from subscription.subscription where usr_id ='
             cursor.execute(sqltext + id)
             row_headers=[x[0] for x in cursor.description]
             res = cursor.fetchall()

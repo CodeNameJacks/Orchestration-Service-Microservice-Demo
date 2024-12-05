@@ -33,7 +33,7 @@ class Preference:
             )
             
             cursor = mydb.cursor()
-            sqltext = 'SELECT product, chosen_mode as mode, local as location, notifications as notify_enabled, email_permission as can_email, is_subscribed_to_newsletter from preference.preference where id ='
+            sqltext = 'SELECT product, chosen_mode as mode, local as location, notifications as notify_enabled, email_permission as can_email, is_subscribed_to_newsletter from preference.preference where u_id ='
             cursor.execute(sqltext + id)
             row_headers=[x[0] for x in cursor.description]
             res = cursor.fetchall()
