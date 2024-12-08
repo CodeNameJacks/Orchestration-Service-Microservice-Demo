@@ -40,12 +40,13 @@ class Preference:
             json_data=[]
             #items = len(res[0])
             for x in res:
-                    json_data.append(x[0]+":"
+                    json_data.append(x[0]+"{"
                         "mode"+":"+ x[1]+' '+
                         "location"+":"+ x[2]+' '+
                         "notify_enabled"+":"+ x[3]+' '+
                         "can_email"+":"+ x[4]+' '+
-                        "is_subscribed_to_newsletter"+":"+ x[5])
+                        "is_subscribed_to_newsletter"+":"+ x[5] +
+                        "}")
                     
                 
             #close database connection   
@@ -55,7 +56,7 @@ class Preference:
             if(json_data):
                 return json.dumps(json_data)
             else:
-                return("No preference have been set for this user")
+                return response.status_code
         except:
             print("Someting went wrong getting user preferences")
 
