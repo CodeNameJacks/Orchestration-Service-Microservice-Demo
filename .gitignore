@@ -2,6 +2,11 @@ venv
 .env
 .md
 .pdf
+*.tar
+*.log
+
+# Kubernetes and Docker-related files
+*.yaml
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
