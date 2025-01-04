@@ -5,7 +5,7 @@ This is a Python program built with the Flask framework to demonstrate and test 
 Note that you can clone the project files by running `git clone https://github.com/CodeNameJacks/Orchestrate.git` in the command line.
 
 To set up and run locally:
-1. In the terminal command line use the command `mkdir <name of folder>` to create the following three folders in your project directory: `user`, `subscription`, `preference` and `orchestrationService`.
+1. In the terminal command line use the command `mkdir <name of folder>` to create the following three folders in your project directory: `user`, `subscription`, `preference` and `orchestration_service`.
 Perform steps 2 - 6 in each folder.
 2. Install Python 3.x
 3. Create a virtual Python environment in the folder by entering `python3 -m venv venv`

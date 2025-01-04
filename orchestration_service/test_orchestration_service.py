@@ -5,7 +5,7 @@ import requests
 from flask import jsonify
 import json
 import random
-#import OrchestrationService 
+#import orchestration_service 
 
 
 class testOrchestrate():
@@ -34,10 +34,10 @@ class testOrchestrate():
         
         
 
-class TestOrchestrationService(unittest.TestCase):
+class Testorchestration_service(unittest.TestCase):
     
-    #def __init__(self, OrchestrationService):
-       #self.OrchestrationService = OrchestrationService
+    #def __init__(self, orchestration_service):
+       #self.orchestration_service = orchestration_service
 
     id = random.randint(1, 1000)
 
