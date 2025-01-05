@@ -52,5 +52,5 @@ class Subscription:
             print("Somthing went wrong pulling subscription info for user")
 
     if __name__ == '__main__':
-        flask.run(port=5002)
+        app.run(port=5002)
 
